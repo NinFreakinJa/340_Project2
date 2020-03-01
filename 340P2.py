@@ -15,14 +15,14 @@ def main():
 
         #how would you do the example he gives with set RANDOMSEED=n13
 
-    int memSize=argv[1]
-    int pSize=argv[2]
-    int jCount=argv[3]
-    int maxRT=argv[4]
-    int minRT=argv[5]
-    int maxMem=argv[6]
-    int minMem=argv[7]
-    int seed=argv[8]
+    memSize=int(argv[1])
+    pSize=int(argv[2])
+    jCount=int(argv[3])
+    maxRT=int(argv[4])
+    minRT=int(argv[5])
+    maxMem=int(argv[6])
+    minMem=int(argv[7])
+    seed=int(argv[8])
 
     #would be useful to have a job class
     createJobs(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed)
