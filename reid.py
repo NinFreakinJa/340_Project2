@@ -34,6 +34,7 @@ def createJobs(jCount,maxRT,minRT,maxMem,minMem,seed):
         jMemSize=random.randint(minMem,maxMem)
         jRunTime=random.randint(minRT,maxRT)
         newJob=Job(jMemSize,jRunTime)
+        jobs.append(newJob)
     return jobs
 
 def printParameters(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed):
