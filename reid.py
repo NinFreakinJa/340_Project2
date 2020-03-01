@@ -38,10 +38,16 @@ def createJobs(jCount,maxRT,minRT,maxMem,minMem,seed):
     return jobs
 
 def printParameters(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed):
-    print("Simulator Parameters:\n")
-    print("Memory Size:"+str(memSize)+"\n")
-    print("Page Size:"+str(pSize)+"\n")
-    print("Random Seed:"+str(seed)+"\n")
-    print("Number of Jobs:"+str(jCount)+"\n")
-    print("Runtime (min-max) timesteps:"+str(minRT)+"-"+str(maxRT)+"\n")
-    print("Memory (min-max):"+str(minMem)+"-"+str(maxMem)+"\n")
+    print("Simulator Parameters:")
+    print("Memory Size:"+str(memSize))
+    print("Page Size:"+str(pSize))
+    print("Random Seed:"+str(seed))
+    print("Number of Jobs:"+str(jCount))
+    print("Runtime (min-max) timesteps:"+str(minRT)+"-"+str(maxRT))
+    print("Memory (min-max):"+str(minMem)+"-"+str(maxMem))
+
+def printJobQueue(jobs):
+    print("Job Queue:")
+    print("Job #    Runtime    Memory")
+    for i in range(0,len(jobs)):
+        print((" "*(5-len(str(i))))+str(i)+(" "*(11-len(str(jobs[i].getRunTime))))+str(jobs[i].getRunTime)+(" "*(10-len(str(jobs[i].getMemSize))))+str(jobs[i].getMemSize))

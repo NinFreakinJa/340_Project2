@@ -8,7 +8,7 @@ from sys import argv
 
 def main():
     if len(argv) !=9:
-        print("Usage:python3 340P2.py memorySize pageSize jobCount maxRunTime minRunTime maxMemory minMemory randomSeed\n")
+        print("Usage:python3 340P2.py memorySize pageSize jobCount maxRunTime minRunTime maxMemory minMemory randomSeed")
         return -1
 
         #how would you do the example he gives with set RANDOMSEED=13
@@ -23,9 +23,10 @@ def main():
     seed=int(argv[8])
 
     if(memSize%pSize!=0):
-        print("Page Size is not multiple of Memory Size\n")
+        print("Page Size is not multiple of Memory Size")
         return -1
     pageCount=memSize/pSize
 
     jobs=createJobs(jCount,maxRT,minRT,maxMem,minMem,seed)
     printParameters(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed)
+    printJobQueue(jobs)
