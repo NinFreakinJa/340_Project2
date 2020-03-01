@@ -8,12 +8,10 @@ from sys import argv
 
 def main():
     if len(argv) !=9:
-        print("Usage:python3 340P2.py memorySize pageSize jobCount maxRunTime minRunTime maxMemory minMemory randomSeed")
+        print("Usage:python3 340P2.py memorySize pageSize jobCount maxRunTime minRunTime maxMemory minMemory randomSeed\n")
         return -1
 
-        #he didn't specify what to do for the time slice
-
-        #how would you do the example he gives with set RANDOMSEED=n13
+        #how would you do the example he gives with set RANDOMSEED=13
 
     memSize=int(argv[1])
     pSize=int(argv[2])
@@ -25,9 +23,9 @@ def main():
     seed=int(argv[8])
 
     if(memSize%pSize!=0):
-        print("Page Size is not multiple of Memory Size")
+        print("Page Size is not multiple of Memory Size\n")
         return -1
     pageCount=memSize/pSize
 
-    #would be useful to have a job class
     jobs=createJobs(jCount,maxRT,minRT,maxMem,minMem,seed)
+    printParameters(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed)

@@ -35,3 +35,12 @@ def createJobs(jCount,maxRT,minRT,maxMem,minMem,seed):
         jRunTime=random.randint(minRT,maxRT)
         newJob=Job(jMemSize,jRunTime)
     return jobs
+
+def printParameters(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed):
+    print("Simulator Parameters:\n")
+    print("Memory Size:"+str(memSize)+"\n")
+    print("Page Size:"+str(pSize)+"\n")
+    print("Random Seed:"+str(seed)+"\n")
+    print("Number of Jobs:"+str(jCount)+"\n")
+    print("Runtime (min-max) timesteps:"+str(minRT)+"-"+str(maxRT)+"\n")
+    print("Memory (min-max):"+str(minMem)+"-"+str(maxMem)+"\n")
