@@ -27,6 +27,7 @@ def main():
     if(memSize%pSize!=0):
         print("Page Size is not multiple of Memory Size")
         return -1
+    pageCount=memSize/pSize
 
     #would be useful to have a job class
     createJobs(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed)

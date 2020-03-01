@@ -5,6 +5,7 @@ class job:
             self.pageCount=pageCount
             self.runTime=runTime
             self.timeRemaining=runTime
+            self.complete=False
     def getMemSize(self):
         return self.memSize
     def getPageCount(self):
@@ -15,8 +16,11 @@ class job:
         self.timeRemaining=self.timeRemaining-timeslice
         if(self.timeRemaining<=0):
             self.timeRemaining=0
+            self.complete=True
     def getTimeRemaining(self):
         return self.timeRemaining
+    def isComplete(self):
+        return self.complete
 
 
 def createJobs(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed):
