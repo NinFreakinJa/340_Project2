@@ -50,4 +50,4 @@ def printJobQueue(jobs):
     print("Job Queue:")
     print("Job #    Runtime    Memory")
     for i in range(0,len(jobs)):
-        print((" "*(5-len(str(i))))+str(i)+(" "*(11-len(str(jobs[i].getRunTime))))+str(jobs[i].getRunTime)+(" "*(10-len(str(jobs[i].getMemSize))))+str(jobs[i].getMemSize))
+        print((" "*(5-len(str(i))))+str(i)+(" "*(11-len(str(jobs[i].getRunTime()))))+str(jobs[i].getRunTime())+(" "*(10-len(str(jobs[i].getMemSize()))))+str(jobs[i].getMemSize()))
