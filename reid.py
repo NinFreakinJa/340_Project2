@@ -1,4 +1,4 @@
-
+from ethan import *
 class job:
     def __init__(self,memSize,pageCount,runTime):
             self.memSize=memSize
@@ -20,3 +20,5 @@ class job:
 
 
 def createJobs(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed):
+    jobs[]
+    return jobs

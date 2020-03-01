@@ -24,5 +24,9 @@ def main():
     minMem=int(argv[7])
     seed=int(argv[8])
 
+    if(memSize%pSize!=0):
+        print("Page Size is not multiple of Memory Size")
+        return -1
+
     #would be useful to have a job class
     createJobs(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed)
