@@ -30,4 +30,4 @@ def main():
     pageCount=memSize/pSize
 
     #would be useful to have a job class
-    createJobs(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed)
+    createJobs(jCount,maxRT,minRT,maxMem,minMem,seed)

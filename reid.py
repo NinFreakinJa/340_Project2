@@ -1,8 +1,9 @@
 from ethan import *
-class job:
-    def __init__(self,memSize,pageCount,runTime):
+import random
+class Job:
+    def __init__(self,memSize,runTime):
             self.memSize=memSize
-            self.pageCount=pageCount
+            self.pageCount=0
             self.runTime=runTime
             self.timeRemaining=runTime
             self.complete=False
@@ -10,6 +11,8 @@ class job:
         return self.memSize
     def getPageCount(self):
         return self.pageCount
+    def setPageCount(self,count):
+        self.pageCount=count
     def getRunTime(self):
         return self.runTime
     def runJob(self,timeslice):
@@ -23,6 +26,11 @@ class job:
         return self.complete
 
 
-def createJobs(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed):
-    jobs[]
+def createJobs(jCount,maxRT,minRT,maxMem,minMem,seed):
+    random.seed(seed)
+    jobs=[]
+    for i in range(0,jCount):
+        jMemSize=random.randint(minMem,maxMem)
+        jRunTime=random.randint(minRT,maxRT)
+        newJob=Job(jMemSize,jRunTime)
     return jobs
