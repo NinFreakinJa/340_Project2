@@ -1,5 +1,6 @@
 from ethan import *
 import random
+#A class for holding information on a job
 class Job:
     def __init__(self,memSize,runTime):
             self.memSize=memSize
@@ -25,7 +26,7 @@ class Job:
     def isComplete(self):
         return self.complete
 
-
+#Creates a list of jobs with given parameters
 def createJobs(jCount,maxRT,minRT,maxMem,minMem,seed):
     random.seed(seed)
     jobs=[]
