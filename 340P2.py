@@ -23,3 +23,6 @@ def main():
     int maxMem=argv[6]
     int minMem=argv[7]
     int seed=argv[8]
+
+    #would be useful to have a job class
+    createJobs(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed)
