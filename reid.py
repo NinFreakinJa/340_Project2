@@ -75,7 +75,7 @@ def printJobQueue(jobs):
     print("Job Queue:")
     print("   Job #    Runtime    Memory")
     for i in range(0,len(jobs)):
-        print((" "*(8-len(str(i))))+str(i)+(" "*(11-len(str(jobs[i].getRunTime()))))+str(jobs[i].getRunTime())+(" "*(10-len(str(jobs[i].getMemSize()))))+str(jobs[i].getMemSize()))
+        print((" "*(8-len(str(i))))+str(i+1)+(" "*(11-len(str(jobs[i].getRunTime()))))+str(jobs[i].getRunTime())+(" "*(10-len(str(jobs[i].getMemSize()))))+str(jobs[i].getMemSize()))
 
 # Prints provided parameters.
 def printParameters(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed):
