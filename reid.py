@@ -23,21 +23,21 @@ class Job:
         return self.memSize
     def getPageCount(self):
         return self.pageCount
-    def setPageCount(self,count):
-        self.pageCount=count
     def getRunTime(self):
         return self.runTime
+    def getTimeRemaining(self):
+        return self.timeRemaining
+    def isComplete(self):
+        return self.complete
     def runJob(self,timeslice):
         self.timeRemaining=self.timeRemaining-timeslice
         if(self.timeRemaining<=0):
             self.timeRemaining=0
             self.complete=True
-    def getTimeRemaining(self):
-        return self.timeRemaining
-    def isComplete(self):
-        return self.complete
+    def setPageCount(self,count):
+        self.pageCount=count
 
-#Creates a list of jobs with given parameters
+# Creates a list of jobs with given parameters
 def createJobs(jCount,maxRT,minRT,maxMem,minMem,seed):
     random.seed(seed)
     jobs=[]

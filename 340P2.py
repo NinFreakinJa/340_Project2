@@ -35,7 +35,6 @@ def main():
     jobs=createJobs(jCount,maxRT,minRT,maxMem,minMem,seed)
 
     # Printing output.
-    
     printParameters(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed)
     printJobQueue(jobs)
 
