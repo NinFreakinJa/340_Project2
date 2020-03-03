@@ -37,6 +37,12 @@ def createJobs(jCount,maxRT,minRT,maxMem,minMem,seed):
         jobs.append(newJob)
     return jobs
 
+def printJobQueue(jobs):
+    print("Job Queue:")
+    print("Job #    Runtime    Memory")
+    for i in range(0,len(jobs)):
+        print((" "*(5-len(str(i))))+str(i)+(" "*(11-len(str(jobs[i].getRunTime()))))+str(jobs[i].getRunTime())+(" "*(10-len(str(jobs[i].getMemSize()))))+str(jobs[i].getMemSize()))
+
 def printParameters(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed):
     print("Simulator Parameters:")
     print("Memory Size:"+str(memSize))
@@ -45,9 +51,3 @@ def printParameters(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed):
     print("Number of Jobs:"+str(jCount))
     print("Runtime (min-max) timesteps:"+str(minRT)+"-"+str(maxRT))
     print("Memory (min-max):"+str(minMem)+"-"+str(maxMem))
-
-def printJobQueue(jobs):
-    print("Job Queue:")
-    print("Job #    Runtime    Memory")
-    for i in range(0,len(jobs)):
-        print((" "*(5-len(str(i))))+str(i)+(" "*(11-len(str(jobs[i].getRunTime()))))+str(jobs[i].getRunTime())+(" "*(10-len(str(jobs[i].getMemSize()))))+str(jobs[i].getMemSize()))
