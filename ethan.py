@@ -32,7 +32,7 @@ class PageTable:
             return False
         for i in range(0, len(self.pages)):        
             if self.pages[i] == ".":
-                self.pages[i] = str(jobID)
+                self.pages[i] = str(jobID)+" "
                 pageRequirement -= 1
             if pageRequirement == 0:
                 return True
@@ -44,7 +44,7 @@ class PageTable:
         return counter >= pageRequirement
     def clearJob(self, jobID):
         for i in range(0, len(self.pages)):        
-            if self.pages[i] == str(jobID):
+            if self.pages[i] == str(jobID)+" ":
                 self.pages[i] = "."
     def printTable(self):
         for i in range(0, len(self.pages)):
@@ -120,6 +120,6 @@ def printJobInformation(jobs):
     print("Job Information:\n\n   Job #   Arrival Time   End Time")
     for job in jobs:
         jobNum = " " * (8 - len(str(job.getJobID()))) + str(job.getJobID())
-        jobArrivalTime = " " * (15 - len(str(job.getRunTime()))) + str(job.getRunTime())
+        jobArrivalTime = " " * (15 - len(str(job.getRunTime()))) + str(job.getArrivalTime())
         jobEndTime = " " * (11 - len(str(job.getEndTime()))) + str(job.getEndTime())
         print(jobNum + jobArrivalTime + jobEndTime)
