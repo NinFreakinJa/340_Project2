@@ -13,6 +13,7 @@ import random
 
 # A class for holding information on a job
 class Job:
+    STATUS = ['RUNNING', 'COMPLETE', 'WAITING', 'STOPPED']
     def __init__(self,memSize,runTime):
             self.memSize=memSize
             self.pageCount=0
@@ -25,10 +26,10 @@ class Job:
         return self.pageCount
     def getRunTime(self):
         return self.runTime
+    def getStatus(self):
+        return self.status
     def getTimeRemaining(self):
         return self.timeRemaining
-    def isComplete(self):
-        return self.complete
     def runJob(self,timeslice):
         self.timeRemaining=self.timeRemaining-timeslice
         if(self.timeRemaining<=0):
@@ -36,6 +37,12 @@ class Job:
             self.complete=True
     def setPageCount(self,count):
         self.pageCount=count
+    def setStatus(self, status):
+        if status not in STATUS:
+            print("Cannot update status to invalid state: " + str(status))
+            return False
+        self.status = status
+        return True
 
 # Creates a list of jobs with given parameters
 def createJobs(jCount,maxRT,minRT,maxMem,minMem,seed):
@@ -48,12 +55,14 @@ def createJobs(jCount,maxRT,minRT,maxMem,minMem,seed):
         jobs.append(newJob)
     return jobs
 
+# Prints the job queue.
 def printJobQueue(jobs):
     print("Job Queue:")
     print("Job #    Runtime    Memory")
     for i in range(0,len(jobs)):
         print((" "*(5-len(str(i))))+str(i)+(" "*(11-len(str(jobs[i].getRunTime()))))+str(jobs[i].getRunTime())+(" "*(10-len(str(jobs[i].getMemSize()))))+str(jobs[i].getMemSize()))
 
+# Prints provided parameters.
 def printParameters(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed):
     print("Simulator Parameters:")
     print("Memory Size:"+str(memSize))
