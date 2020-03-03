@@ -13,6 +13,7 @@ import random
 
 # A class for holding information on a job
 class Job:
+    # Class initializers.
     STATUS = ['RUNNING', 'COMPLETE', 'WAITING', 'STOPPED']
     def __init__(self,memSize,runTime):
             self.memSize=memSize
@@ -20,6 +21,8 @@ class Job:
             self.runTime=runTime
             self.timeRemaining=runTime
             self.complete=False
+    
+    # Class methods.
     def getMemSize(self):
         return self.memSize
     def getPageCount(self):
@@ -34,7 +37,7 @@ class Job:
         self.timeRemaining=self.timeRemaining-timeslice
         if(self.timeRemaining<=0):
             self.timeRemaining=0
-            self.complete=True
+            setStatus("COMPLETE")
     def setPageCount(self,count):
         self.pageCount=count
     def setStatus(self, status):
