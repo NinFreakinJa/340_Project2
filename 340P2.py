@@ -12,30 +12,36 @@ from sys import argv
 
 def main():
     if len(argv) !=9:
-        print("Usage:python3 340P2.py memorySize pageSize jobCount maxRunTime minRunTime maxMemory minMemory randomSeed")
+        print("Usage:python3 340P2.py memorySize pageSize jobCount minRunTime maxRunTime minMemory maxMemory randomSeed")
         return -1
 
     # Getting command line arguments.
     memSize = int(argv[1])
     pSize = int(argv[2])
     jCount = int(argv[3])
-    maxRT = int(argv[4])
-    minRT = int(argv[5])
-    maxMem = int(argv[6])
-    minMem = int(argv[7])
+    minRT = int(argv[4])
+    maxRT = int(argv[5])
+    minMem = int(argv[6])
+    maxMem = int(argv[7])
     seed = int(argv[8])
 
     # Validating command line arguments and setting page count.
     if(memSize%pSize!=0):
         print("Page Size is not multiple of Memory Size")
         return -1
-    pageCount=memSize/pSize
+    pageCount=int(memSize/pSize)
 
     # Creating jobs.
     jobs=createJobs(jCount,maxRT,minRT,maxMem,minMem,seed)
 
     # Printing output.
     printParameters(memSize,pSize,jCount,maxRT,minRT,maxMem,minMem,seed)
+    print()
     printJobQueue(jobs)
+    print()
+    doSimulation(jobs, pageCount, pSize)
+    print()
+    printJobInformation(jobs)
+
 
 main()
