@@ -7,3 +7,8 @@
 
 from reid import Job
 
+def doSimulation():
+    pass
+
+def printJobInformation():
+    pass
