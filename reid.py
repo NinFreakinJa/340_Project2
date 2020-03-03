@@ -1,6 +1,17 @@
-from ethan import *
+# reid.py
+# Reid Foster
+# 03/03/2020
+# Provides the following class:
+#   Job
+# Provides the following methods:
+#   createJobs()
+#   printJobQueue()
+#   printParameters()
+
+# Random class allows use of random integers (with seeds).
 import random
-#A class for holding information on a job
+
+# A class for holding information on a job
 class Job:
     def __init__(self,memSize,runTime):
             self.memSize=memSize
