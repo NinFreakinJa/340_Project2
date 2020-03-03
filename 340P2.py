@@ -12,7 +12,7 @@ from sys import argv
 
 def main():
     if len(argv) !=9:
-        print("Usage:python3 340P2.py memorySize pageSize jobCount minRunTime maxRunTime minMemory maxMemory randomSeed")
+        print("Usage:python3 340P2.py <memorySize> <pageSize> <jobCount> <minRunTime> <maxRunTime> <minMemory> <maxMemory> <randomSeed>")
         return -1
 
     # Getting command line arguments.
